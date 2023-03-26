@@ -32,13 +32,13 @@ module.exports = {
     host: '0.0.0.0',
     port: port,
     open: true,
-    proxy: {
+    proxy: {// 反向代理
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_API]: {
-        target: `http://localhost:8080`,
+        target: `http://localhost:8080`,// 后端端口
         changeOrigin: true,
         pathRewrite: {
-          ['^' + process.env.VUE_APP_BASE_API]: ''
+          ['^' + process.env.VUE_APP_BASE_API]: ''// /dev-api替换为空
         }
       }
     },
